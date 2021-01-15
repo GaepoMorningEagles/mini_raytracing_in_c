@@ -2,14 +2,23 @@
 # define STRUCTURES_H
 
 // 1. 공용 구조체
-typedef struct s_vec3 t_vec3;
-typedef struct s_vec3 t_point3;
-typedef struct s_vec3 t_color3;
-typedef struct s_ray t_ray;
+typedef struct s_vec3	t_vec3;
+typedef struct s_vec3	t_point3;
+typedef struct s_vec3	t_color3;
+typedef struct s_ray	t_ray;
 
 // 2. 장면 구조체
-typedef struct s_camera t_camera;
-typedef struct s_canvas t_canvas;
+typedef struct s_camera	t_camera;
+typedef struct s_canvas	t_canvas;
+
+// 3. 오브젝트 구조체
+typedef struct s_sphere	t_sphere;
+
+
+// 4. 식별자 매크로
+typedef int				t_bool;
+# define FALSE 0
+# define TRUE 1
 
 // 공용 구조체
 struct s_vec3
@@ -42,6 +51,14 @@ struct	s_canvas
 	int		width; //canvas width
 	int		height; //canvas height;
 	double	aspect_ratio; //종횡비
+};
+
+// 오브젝트 구조체
+struct	s_sphere
+{
+	t_point3	center;
+	double		radius;
+	double		radius2;
 };
 
 #endif
