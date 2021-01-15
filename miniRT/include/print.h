@@ -1,5 +1,5 @@
-#ifndef COLOR_H
-# define COLOR_H
+#ifndef PRINT_H
+# define PRINT_H
 
 # include "stdio.h"
 # include "structures.h"
