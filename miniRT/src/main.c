@@ -1,14 +1,15 @@
 #include <stdio.h>
+#include "structures.h"
+#include "utils.h"
+#include "color.h"
 
 int	main(void)
 {
-	int		i;
-	int		j;
-	double	r;
-	double	g;
-	double	b;
-	int		canvas_width;
-	int		canvas_height;
+	int			i;
+	int			j;
+	t_color3	pixel_color;
+	int			canvas_width;
+	int			canvas_height;
 
 	//캔버스의 가로, 세로 픽셀값
 	canvas_width = 256;
@@ -23,10 +24,10 @@ int	main(void)
 		i = 0;
 		while (i < canvas_width)
 		{
-			r = (double)i / (canvas_width - 1);
-			g = (double)j / (canvas_height - 1);
-			b = 0.25;
-			printf("%d %d %d\n", (int)(255.999 * r), (int)(255.999 * g), (int)(255.999 * b));
+		pixel_color.x = (double)i / (canvas_width - 1);
+			pixel_color.y = (double)j / (canvas_height - 1);
+			pixel_color.z = 0.25;
+			write_color(pixel_color);
 		++i;
 		}
 	--j;
