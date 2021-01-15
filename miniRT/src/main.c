@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "structures.h"
 #include "utils.h"
-#include "color.h"
+#include "print.h"
 
 int	main(void)
 {
