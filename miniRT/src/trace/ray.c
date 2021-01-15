@@ -6,7 +6,7 @@ t_ray		ray(t_point3 orig, t_vec3 dir)
 	t_ray ray;
 
 	ray.orig = orig;
-	ray.dir = dir;
+	ray.dir = vunit(dir);
 	return (ray);
 }
 
@@ -31,12 +31,12 @@ t_point3	ray_at(t_ray *ray, double t)
 }
 
 //광선이 최종적으로 얻게된 픽셀의 색상 값을 리턴.
-t_color3	ray_color(t_ray *r)
+t_color3	ray_color(t_ray *ray)
 {
-	t_vec3	unit_dir;
-
-	unit_dir = vunit(r->dir);
-	double	t = 0.5 * (unit_dir.y + 1.0);
+	double	t;
+	
+	//ray의 방향벡터의 y 값을 기준으로 그라데이션을 주기 위한 계수.
+	t = 0.5 * (ray->dir.y + 1.0);
 	// (1-t) * 흰색 + t * 하늘색
 	return (vplus(vmult(color3(1, 1, 1), 1.0 - t), vmult(color3(0.5, 0.7, 1.0), t)));
 }
