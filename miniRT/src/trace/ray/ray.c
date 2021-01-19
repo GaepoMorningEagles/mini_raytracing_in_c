@@ -34,9 +34,15 @@ t_point3	ray_at(t_ray *ray, double t)
 t_color3	ray_color(t_ray *ray, t_sphere *sphere)
 {
 	double	t;
+	t_vec3	n;
 
-	if (hit_sphere(sphere, ray))
-		return (color3(1, 0, 0));
+	//광선이 구에 적중하면(광선과 구가 교점이 있고, 교점이 카메라 앞쪽이라면!)
+	t = hit_sphere(sphere, ray);
+	if (t > 0.0)
+	{
+		n = vunit(vminus(ray_at(ray, t), sphere->center));
+		return (vmult(color3(n.x + 1, n.y + 1, n.z + 1), 0.5));
+	}
 	else
 	{
 		//ray의 방향벡터의 y 값을 기준으로 그라데이션을 주기 위한 계수.
