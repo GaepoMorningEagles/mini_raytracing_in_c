@@ -6,6 +6,7 @@
 # include <stdio.h>
 # include "structures.h"
 
+// 벡터 유틸리티
 t_vec3		vec3(double x, double y, double z);
 t_point3	point3(double x, double y, double z);
 t_point3	color3(double r, double g, double b);
@@ -22,5 +23,9 @@ t_vec3		vdivide(t_vec3 vec, double t);
 double		vdot(t_vec3 vec, t_vec3 vec2);
 t_vec3		vcross(t_vec3 vec, t_vec3 vec2);
 t_vec3		vunit(t_vec3 vec);
+
+// 오브젝트 유틸리티
+void		oadd(t_object **list, t_object *new);
+t_object	*olast(t_object *list);
 
 #endif
