@@ -14,12 +14,3 @@ void		oadd(t_object **list, t_object *new)
 		cur = cur->next;
 	cur->next = new;
 }
-
-t_object	*olast(t_object *list)
-{
-	if (list == NULL)
-		return (NULL);
-	while (list->next)
-		list = list->next;
-	return (list);
-}
