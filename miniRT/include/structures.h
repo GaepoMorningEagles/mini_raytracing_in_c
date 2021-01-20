@@ -13,13 +13,16 @@ typedef struct s_camera	t_camera;
 typedef struct s_canvas	t_canvas;
 
 // 3. 오브젝트 구조체
+typedef struct s_object t_object;
 typedef struct s_sphere	t_sphere;
-
 
 // 4. 식별자 매크로
 typedef int				t_bool;
 # define FALSE 0
 # define TRUE 1
+
+typedef int				t_object_type;
+# define SP 0
 
 // 공용 구조체
 struct s_vec3
@@ -65,6 +68,13 @@ struct	s_canvas
 };
 
 // 오브젝트 구조체
+struct						s_object
+{
+	t_object_type	type;
+	void			*element;
+	void			*next;
+};
+
 struct	s_sphere
 {
 	t_point3	center;

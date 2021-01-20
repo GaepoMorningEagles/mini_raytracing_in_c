@@ -31,7 +31,7 @@ t_point3	ray_at(t_ray *ray, double t)
 }
 
 //광선이 최종적으로 얻게된 픽셀의 색상 값을 리턴.
-t_color3	ray_color(t_ray *ray, t_sphere *sphere)
+t_color3	ray_color(t_ray *ray, t_object *world)
 {
 	double			t;
 	t_vec3			n;
@@ -40,7 +40,7 @@ t_color3	ray_color(t_ray *ray, t_sphere *sphere)
 	rec.tmin = 0;
 	rec.tmax = INFINITY;
 	//광선이 구에 적중하면(광선과 구가 교점이 있고, 교점이 카메라 앞쪽이라면!)
-	if (hit_sphere(sphere, ray, &rec))
+	if (hit(world, ray, &rec))
 		return (vmult(vplus(rec.normal, color3(1, 1, 1)), 0.5));
 	else
 	{
