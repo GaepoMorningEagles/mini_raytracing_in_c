@@ -23,3 +23,15 @@ t_sphere	*sphere(t_point3 center, double radius)
 	sp->radius2 = radius * radius;
 	return (sp);
 }
+
+t_light		*light_point(t_point3 light_origin, t_color3 light_color, double bright_ratio)
+{
+	t_light	*light;
+
+	if(!(light = (t_light *)malloc(sizeof(t_light))))
+		return (NULL);
+	light->origin = light_origin;
+	light->light_color = light_color;
+	light->bright_ratio = bright_ratio;
+	return (light);
+};

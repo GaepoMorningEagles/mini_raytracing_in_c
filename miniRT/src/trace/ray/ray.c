@@ -30,22 +30,28 @@ t_point3	ray_at(t_ray *ray, double t)
 	return (at);
 }
 
+t_hit_record record_init(void)
+{
+	t_hit_record	record;
+
+	record.tmin = EPSILON;
+	record.tmax = INFINITY;
+	return (record);
+}
+
 //광선이 최종적으로 얻게된 픽셀의 색상 값을 리턴.
-t_color3	ray_color(t_ray *ray, t_object *world)
+t_color3	ray_color(t_scene *scene)
 {
 	double			t;
 	t_vec3			n;
-	t_hit_record	rec;
 
-	rec.tmin = 0;
-	rec.tmax = INFINITY;
-	//광선이 구에 적중하면(광선과 구가 교점이 있고, 교점이 카메라 앞쪽이라면!)
-	if (hit(world, ray, &rec))
-		return (vmult(vplus(rec.normal, color3(1, 1, 1)), 0.5));
+	scene->rec = record_init();
+	if (hit(scene->world, &scene->ray, &scene->rec))
+		return (vmult(vplus(scene->rec.normal, color3(1, 1, 1)), 0.5));
 	else
 	{
 		//ray의 방향벡터의 y 값을 기준으로 그라데이션을 주기 위한 계수.
-		t = 0.5 * (ray->dir.y + 1.0);
+		t = 0.5 * (scene->ray.dir.y + 1.0);
 		// (1-t) * 흰색 + t * 하늘색
 		return (vplus(vmult(color3(1, 1, 1), 1.0 - t), vmult(color3(0.5, 0.7, 1.0), t)));
 	}
