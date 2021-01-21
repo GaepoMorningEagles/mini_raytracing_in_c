@@ -47,7 +47,7 @@ t_color3	ray_color(t_scene *scene)
 
 	scene->rec = record_init();
 	if (hit(scene->world, &scene->ray, &scene->rec))
-		return (vmult(vplus(scene->rec.normal, color3(1, 1, 1)), 0.5));
+		return (phong_lighting(scene));
 	else
 	{
 		//ray의 방향벡터의 y 값을 기준으로 그라데이션을 주기 위한 계수.
