@@ -23,6 +23,7 @@ t_vec3		vdivide(t_vec3 vec, double t);
 double		vdot(t_vec3 vec, t_vec3 vec2);
 t_vec3		vcross(t_vec3 vec, t_vec3 vec2);
 t_vec3		vunit(t_vec3 vec);
+t_vec3		vmin(t_vec3 vec1, t_vec3 vec2);
 
 // 오브젝트 유틸리티
 void		oadd(t_object **list, t_object *new);
