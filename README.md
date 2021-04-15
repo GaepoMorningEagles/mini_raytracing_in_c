@@ -6,7 +6,7 @@ kilee(이기훈) / hyeonkim(김형태) / mijeong(정민재)
 
 ## 0.2. 왜만들었는지
 
-우리는 개발자의 길로 들어온지 반년차인 우리에게 ray tracing이라는 생소한 기술을 적용한 렌더링 프로그램을 만들어보는 실습은 짧은 개발자 인생에서 겪게된 가장 높은 벽이였다. 특히 우리가 실습을 할 당시 기준으로 한글로 작성된 ray tracing 실습 레퍼런스가 전무했었고,  ray tracing 의 수학의 정석과, 개념원리 와 같은 두개의 사이트([Scratchpixels](https://www.scratchapixel.com/), [Raytracing in one weekend](https://raytracing.github.io/)) 는 모두 c++을 통해 실습이 구성되어있어, 영알못에  다룰줄 아는 언어라곤 c밖에 없고 그마저도 비루한 수준의 실력인 우리에게는 시작부터 좌절의 연속이였다.
+개발자의 길로 들어온지 반년차인 우리에게 ray tracing이라는 생소한 기술을 적용한 렌더링 프로그램을 만들어보는 실습은 짧은 개발자 인생에서 겪게된 가장 높은 벽이였다. 특히 우리가 실습을 할 당시 기준으로 한글로 작성된 ray tracing 실습 레퍼런스가 전무했었고,  ray tracing 의 수학의 정석과, 개념원리 와 같은 두개의 사이트([Scratchpixels](https://www.scratchapixel.com/), [Raytracing in one weekend](https://raytracing.github.io/)) 는 모두 c++을 통해 실습이 구성되어있어, 영알못에  다룰줄 아는 언어라곤 c밖에 없고 그마저도 비루한 수준의 실력인 우리에게는 시작부터 좌절의 연속이였다.
 
 하지만 최종적으로 우리가 만든 프로그램으로 아래와 같은 멋진 이미지를 생성할 수 있었다
 
